@@ -1,0 +1,71 @@
+Shared
+Routing Guide
+
+  #touch-rg-main
+  - width:300px
+  - height:470px
+  - rounded left corner
+
+  #touch-rg header
+  - blackish
+  - contains brand image
+  - contains close icon
+  - has green border at the bottom
+
+  #touch-rg header .close
+  - color white
+  - icon close x
+
+  #touch-rg .breadcrumb
+  - Current location grey
+  - other locations green
+
+  #touch-rg .content
+  - contains a list of menu options
+  - contains a back button
+
+  #touch-rg .content .li
+  - Contains prompt text
+  - contains menu options
+
+  #touch-rg .content .li:hover
+  - color dark green
+  - background color light green
+
+  #touch-rg .content .active
+  - color white
+  - background dark green
+
+  #touch-rg .content .li .billing
+  - contains blling icon, grey
+  - contains link to billing
+  - contains text for billing
+
+  #touch-rg .content .li .support
+  - contains support icon, grey
+  - contains link to support
+  - contains text for support
+
+  #touch-rg .content .li .account
+  - contains account icon, grey
+  - contains link to account
+  - contains text for account
+
+  #touch-rg .content .li .other
+  - contains other icon, grey
+  - contains link to other
+  - contains text for other
+
+  #touch-rg .content .back
+  - arrow icon, green
+
+  #touch-rg footer
+  - grey back ground
+  - contains powered by image
+
+Prechat Survey
+
+  #touch-ps-main
+    width:300px
+    height:625px
+    rounded left corner
