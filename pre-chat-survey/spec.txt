@@ -1,0 +1,70 @@
+Shared
+Pre chat survey (pcs)
+
+  #touch-pcs
+  - width:300px
+  - height:625px
+  - rounded left corner
+
+  #touch-pcs header
+  - blackish
+  - contains brand image
+  - contains close icon
+  - has green border at the bottom
+
+  #touch-pcs header .close
+  - color white
+  - icon close x
+
+  #touch-pcs prompt
+  - bolded text
+  - "Which Mobile topic would you like help with?"
+
+  #touch-pcs .survey-form
+
+  #touch-pcs .fullname
+  - label: Full Name:*
+  - input field
+  - contains user icon
+  - contains Placeholder text "John Doe"
+
+  #touch-pcs .fullname:focused
+  - background light green
+
+  #touch-pcs .phone
+  - label: Mobile Phone Number:*
+  - input field
+  - contains phone icon
+  - contains placeholder text "ex : 123-123-1234"
+
+  #touch-pcs .phone:focus
+  - background : light green
+
+  #touch-pcs .state
+  - label"State:"
+  - Drop down Containing states
+  - Not sure is focus rule should apply here
+
+  #touch .question
+  - label: Describe your question...
+  - text area
+  - no default text
+
+  #touch .question:focus
+  - I assume it is light green like the others?
+
+  #touch-pcf .chat-button
+  - button
+  - right side
+  - buttonText : Start Chat
+  - button color : light green
+  - text color : white. (light green + white probally does not pass accessibility stanndards)
+
+
+  #touch-pcf .required-prompt
+  - text : "* Required field"
+  - right side
+
+  #touch-pcs footer
+  - grey back ground
+  - contains powered by image

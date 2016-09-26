@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>test</title>
+  <link rel="stylesheet" href="touch-pcs.css">  
+</head>
+<body>
+
+    <div id="touch-pcs">
+        <!-- The header for the module -->
+        <header>
+          <div class="brand">
+            <img height="60px" src="images/logo-best-brands.png" />
+          </div>
+          <button class="close">
+            <img height="15px" src="images/btn-close.png"/>
+          </button>
+        </header>
+
+        <main>
+
+          <div class="prompt">Which Mobile topic would you like help with?</div>
+
+          <div class="survey">
+            <form class="survey-form">
+
+              <div class="fullname">
+                <label for="fullname">Full Name:*</label>
+                <input type="text" id="fullname" placeholder="John Doe" />
+              </div>
+
+              <div class="phone">
+                <label for="phone">Mobile Phone Number:*</label>
+                <input type="text" id="phone" name="phone" placeholder="ex : 123-123-1234" />
+              </div>
+
+              <div class="state">
+                <label for="state">State</label>
+                <select id="state" name="state">
+                  <option value="">Select one</option>
+                  <option value="CA">California</option>
+                  <option value="OR">Oregon</option>
+                  <option value="WA">Washington</option>
+                </select>
+              </div>
+
+              <div class="question">
+                <label for="question">Describe your question... </label>
+                <textarea id="question" name="question" rows="4" cols="50"></textarea>
+              </div>
+
+              <div class="form-footer">
+                <button class="submit-form" type="submit">Start Chat</button>
+                <div class="required-note">* Required field</div>
+              </div>
+            <form>
+          </div>
+        </main>
+
+        <!-- inormation footer -->
+        <footer>
+          <img height="15px" width="100px" src="images/logo-tc.png"/>
+        </footer>
+    </div>
+
+</body>
+</html>
