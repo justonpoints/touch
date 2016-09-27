@@ -1,0 +1,268 @@
+
+/* CSS styling for the applications wrapper */
+#touch-app{
+
+  border:1px solid black;
+  border-radius: 15px 0px 0px 0px;
+  overflow: hidden;
+
+  display:flex;
+  flex-direction: column;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#touch-app.rg-mode{
+  width:300px;
+  height:470px;
+}
+
+#touch-app.pcs-mode{
+  width:300px;
+  min-height:625px;
+}
+
+#touch-app header{
+  background-color:#424242;
+  border-bottom: 5px solid #8BC34A;
+  color:white;
+  height:40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display:flex;
+  flex-direction: row;
+}
+
+#touch-app header .brand{
+  flex:1;
+  width:90%
+}
+
+#touch-app header .close{
+  background-color:#424242;
+  border:0px;
+}
+
+#touch-app footer{
+  background-color:#E0E0E0;
+  height:20px;
+  padding:0px 1px 0px 3px;
+}
+
+/* CSS styling for the routing guide */
+#touch-rg {
+  flex:1;
+  margin: 20px 0px 20px 0px;
+}
+
+#touch-rg .breadcrumb{
+  padding:0px 10px 20px 20px;
+  font-size: 14px;
+}
+
+#touch-rg .breadcrumb a{
+  color:#8BC34A;
+  text-decoration: none;
+}
+
+#touch-rg .breadcrumb a.current{
+  color:#9E9E9E;
+}
+
+#touch-rg .prompt{
+  padding:0px 40px 10px 20px;
+  font-weight: bold;
+}
+
+#touch-rg .menu{
+  padding: 0;
+  list-style-type:none;
+}
+
+#touch-rg .menu li{
+  padding:0px 0px 20px 20px;
+  height:25px;
+  display: flex;
+  flex-flow:row;
+}
+
+#touch-rg .menu li i{
+  width:10px;
+}
+
+#touch-rg .menu li .icon-section{
+  width:40px;
+}
+
+#touch-rg .menu li .menu-option{
+  padding-top: 12px;
+  color:#424242;
+}
+
+#touch-rg .menu li.active{
+  background-color:#8BC34A;
+  border:1px solid #33691E;
+}
+
+#touch-rg .menu li.active .menu-option{
+  color:#E6EE9C;
+}
+
+#touch-rg .menu li:hover{
+  background-color:#DCEDC8;
+  /*border:1px solid #33691E; no border in the spec. But it makes it look better*/
+}
+
+#touch-rg .menu li:hover .menu-option{
+  color:#33691E;
+}
+
+
+#touch-rg .back{
+  padding:0px 0px 20px 20px;
+  height:25px;
+  display: flex;
+  flex-flow:row;
+}
+
+#touch-rg .back .icon-section{
+  min-height: 10px;
+  width: 40px;
+}
+
+#touch-rg .back .title{
+  padding-top: 12px;
+}
+
+#touch-rg .back .icon-section .icon{
+  color:#8BC34A;
+}
+
+#touch-rg .back:hover{
+  background-color:#DCEDC8;
+  color:#33691E;
+  border:1px solid #33691E;
+}
+
+#touch-rg .icon {
+  color:#424242;
+  font-size: 36px;
+}
+
+/* CSS Styling for the chat survey */
+#touch-pcs {
+  flex:1;
+  margin: 20px 0px 20px 0px;
+}
+
+#touch-pcs .prompt{
+  padding:0px 40px 10px 20px;
+  font-weight: bold;
+}
+
+#touch-pcs .survey{
+  padding:0px 40px 10px 20px;
+}
+
+#touch-pcs .survey-form {
+  display:flex;
+  flex-direction: column;
+}
+
+#touch-pcs .survey-form div{
+  padding-bottom:10px;
+}
+
+#touch-pcs .survey-form .fullname input{
+    background: url(images/icon-form-avatar.png) no-repeat scroll 7px 7px;
+    padding-left:50px;
+  }
+
+#touch-pcs .survey-form .phone input{
+    background: url(images/icon-form-phone.png) no-repeat 7px 7px;
+    padding-left:50px;
+  }
+
+#touch-pcs .survey-form .fullname input.error{
+    background: url(images/icon-form-avatar.png),url(images/icon-form-error.png);
+    background-position: 7px 7px,95% 7px;
+    background-repeat: no-repeat,no-repeat;
+    padding-left:50px;
+    background-color: #ffcdd2;
+    border:1px solid #b71c1c;
+  }
+
+#touch-pcs .survey-form .phone input.error{
+    background: url(images/icon-form-phone.png),url(images/icon-form-error.png);
+    background-position: 7px 7px,95% 7px;
+    background-repeat: no-repeat,no-repeat;
+    padding-left:50px;
+    background-color: #ffcdd2;
+    border:1px solid #b71c1c;
+  }
+
+#touch-pcs #phone-error,#touch-pcs #fullname-error{
+  float:right;
+  font-size:11px;
+  color:#b71c1c;
+}
+
+#touch-pcs .survey-form input:focus,#touch-pcs .survey-form textarea:focus{
+  background-color: #DCEDC8;
+  border:1px solid #33691E;
+}
+
+#touch-pcs .survey-form input.error:focus{
+  background-color: #DCEDC8;
+  border:1px solid #b71c1c;
+}
+
+#touch-pcs .survey-form .form-footer{
+  display: flex;
+  flex-direction: column;
+}
+
+#touch-pcs .survey-form .form-footer button{
+  background:linear-gradient(#AED581,#9CCC65);
+  color:white;
+  font-size:14px;
+  width:110px;
+  height:30px;
+  border:0px;
+  border-radius: 5px;
+  text-shadow: 1px 1px #424242;
+  margin-left: auto;
+}
+
+#touch-pcs .survey-form .form-footer .required-note{
+  font-size:12px;
+  margin-left: auto;
+}
+
+#touch-pcs input[type=text], select, textarea {
+  width: 100%;
+  padding: 8px 8px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+#touch-pcs label{
+  font-weight: normal;
+  padding:0px;
+  font-size: 14px;
+}
+
+/* CSS Styling for the chat app */
+#touch-chat {
+  flex:1;
+  margin: 20px 0px 20px 0px;
+}
+
+#touch-chat .prompt{
+  padding:0px 40px 10px 20px;
+  font-weight: bold;
+}

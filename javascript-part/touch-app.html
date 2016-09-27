@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>test</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
+
+  <link rel="stylesheet" href="touch-app.css">
+</head>
+<body>
+
+    <div id="touch-app" class="rg-mode">
+        <!-- The header for the module -->
+        <header>
+          <div class="brand">
+            <img height="60px" src="images/logo-best-brands.png" />
+          </div>
+          <button class="close">
+            <img height="15px" src="images/btn-close.png"/>
+          </button>
+        </header>
+
+        <main id="touch-rg">
+
+          <!-- The nreadcrumb for the module -->
+          <div class="breadcrumb">
+            <a href="/home">Home</a>
+            <span>/</span>
+            <a href="/home/services">Existing Services</a>
+            <span>/</span>
+            <a href="/home/services/mobile" class="current">Mobile</a>
+          </div>
+
+
+          <!-- Main prompt -->
+          <div class="prompt">Which Mobile topic would you like help with?</div>
+
+          <!-- Menu items -->
+          <ul class="menu">
+
+            <li class="billing">
+              <div class="icon-section">
+                <i class="material-icons icon">account_balance</i>
+              </div>
+              <div class="menu-option">
+                Billing and Payments
+              </div>
+            </li>
+
+            <li class="support">
+              <div class="icon-section">
+                <i class="material-icons icon">supervisor_account</i>
+              </div>
+              <div class="menu-option">
+                Technical Support
+              </div>
+            </li>
+
+            <li class="account">
+              <div class="icon-section">
+                <i class="material-icons icon">security</i>
+              </div>
+              <div class="menu-option">
+                Account Login Support
+              </div>
+            </li>
+
+            <li class="other">
+              <div class="icon-section">
+                <i class="material-icons icon">bubble_chart</i>
+              </div>
+              <div class="menu-option">
+                Other
+              </div>
+            </li>
+
+          </ul>
+
+          <!-- Navigation -->
+          <div class="back">
+            <div class="icon-section">
+              <i class="material-icons icon">arrow_back</i>
+            </div>
+            <div class="title">
+              Back
+            </div>
+          </div>
+
+        </main>
+
+        <!-- Pre chat survey -->
+        <main id="touch-pcs">
+
+          <div class="prompt">Which Mobile topic would you like help with?</div>
+
+          <div class="survey">
+            <form id="survey-form" class="survey-form">
+
+              <div class="fullname">
+                <label for="fullname">Full Name:*</label>
+                <input type="text" id="fullname" name="fullname" placeholder="John Doe" required />
+              </div>
+
+              <div class="phone">
+                <label for="phone">Mobile Phone Number:*</label>
+                <input type="text" id="phone" name="phone" placeholder="ex : 123-123-1234" required />
+              </div>
+
+              <div class="state">
+                <label for="state">State</label>
+                <select id="state" name="state">
+                  <option value="">Select one</option>
+                  <option value="CA">California</option>
+                  <option value="OR">Oregon</option>
+                  <option value="WA">Washington</option>
+                </select>
+              </div>
+
+              <div class="ca-purchase">
+                <label for="ca-purchase">Was your phone purchased in CA?</label>
+                <select id="ca-purchase" name="ca-purchase">
+                  <option value="">Select one</option>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select>
+              </div>
+
+              <div class="question">
+                <label for="question">Describe your question... </label>
+                <textarea id="question" name="question" rows="4" cols="50"></textarea>
+              </div>
+
+              <div class="form-footer">
+                <button class="submit-form" type="submit">Start Chat</button>
+                <div class="required-note">* Required field</div>
+              </div>
+            <form>
+          </div>
+        </main>
+
+        <!-- Chat section -->
+        <main id="touch-chat">
+          <div class="prompt">Congratulations!! You have reached the chat agent</div>
+        </main>
+
+
+        <!-- inormation footer -->
+        <footer>
+          <img height="15px" width="100px" src="images/logo-tc.png"/>
+        </footer>
+    </div>
+
+    <script>
+    $("#touch-pcs").hide();
+    $("#touch-chat").hide();
+    $("#touch-pcs .ca-purchase").hide();
+
+    $.validator.methods.phone = function( value, element ) {
+      return this.optional( element ) || /^(\([0-9]{3}\) ?|[0-9]{3}(-| )?)[0-9]{3}-?[0-9]{4}$/.test( value );
+    }
+
+    $( "#survey-form" ).submit(function( event ) {
+      event.preventDefault();
+    });
+
+    $(document).ready(function(){
+      $("#touch-rg .billing").click(function(){
+          $("#touch-rg").hide();
+          $("#touch-pcs").show();
+          $("#touch-app").removeClass("rg-mode");
+          $("#touch-app").addClass("pcs-mode");
+      });
+
+
+      $("#touch-pcs #state").change(function(){
+          console.log("1234",$("#touch-pcs #state :selected").val());
+          if ($("#touch-pcs #state :selected").val() === 'CA'){
+            $("#touch-pcs .ca-purchase").show();
+          }
+          else{
+            $("#touch-pcs .ca-purchase").hide();
+          }
+        });
+
+      //
+      $("#survey-form").validate({
+            rules: {
+              phone: {
+                required: true,
+                phone: true
+              }
+            },
+            messages: {
+      				fullname: {
+      					required: 'Fullname is a required field.'
+      				},
+              phone:{
+                required:'Phone is a required field',
+                phone:'Please enter a valid phone number.'
+              }
+            }
+      });
+    }).submit(function(){
+      $("#touch-pcs").hide();
+      $("#touch-chat").show();
+    });
+
+    </script>
+
+</body>
+</html>
